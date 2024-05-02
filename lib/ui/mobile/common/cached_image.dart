@@ -10,9 +10,8 @@ import 'package:tearmusic/models/music/images.dart';
 import 'package:http/http.dart' as http;
 
 class CachedImage extends StatelessWidget {
-  CachedImage(this.images, {Key? key, this.borderRadius = 4.0, this.setTheme = false, this.size})
-      : _data = Completer<Uint8List>(),
-        super(key: key);
+  CachedImage(this.images, {super.key, this.borderRadius = 4.0, this.setTheme = false, this.size})
+      : _data = Completer<Uint8List>();
 
   final Images? images;
   final double borderRadius;

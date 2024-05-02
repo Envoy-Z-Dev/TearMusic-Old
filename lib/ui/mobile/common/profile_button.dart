@@ -5,7 +5,7 @@ import 'package:tearmusic/providers/user_provider.dart';
 import 'package:tearmusic/ui/mobile/screens/settings_screen.dart';
 
 class ProfileButton extends StatelessWidget {
-  const ProfileButton({Key? key}) : super(key: key);
+  const ProfileButton({super.key});
 
   @override
   Widget build(BuildContext context) {

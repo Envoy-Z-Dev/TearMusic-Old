@@ -13,13 +13,13 @@ int moveFromIndex = -1;
 
 class TrackData extends StatelessWidget {
   const TrackData({
-    Key? key,
+    super.key,
     this.itemIndex,
     required this.itemKey,
     this.track,
     this.item,
     this.isPrimary = false,
-  }) : super(key: key);
+  });
 
   final Widget? item;
   final MusicTrack? track;
@@ -91,9 +91,9 @@ enum DraggingMode {
 
 class QueueView extends StatefulWidget {
   const QueueView({
-    Key? key,
+    super.key,
     this.controller,
-  }) : super(key: key);
+  });
 
   final ScrollController? controller;
 

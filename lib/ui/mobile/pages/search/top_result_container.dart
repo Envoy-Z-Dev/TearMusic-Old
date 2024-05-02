@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class TopResultContainer extends StatelessWidget {
   const TopResultContainer({
-    Key? key,
+    super.key,
     this.icon,
     required this.results,
     required this.kind,
     required this.index,
     required this.tabController,
     required this.pageController,
-  }) : super(key: key);
+  });
 
   final List<Widget> results;
   final String kind;

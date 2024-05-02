@@ -4,9 +4,9 @@ import 'package:tearmusic/ui/mobile/common/cached_image.dart';
 import 'package:tearmusic/ui/mobile/common/views/album_view.dart';
 
 class ArtistAlbumTile extends StatelessWidget {
-  const ArtistAlbumTile(this.album, {Key? key, this.then, this.size = 130}) : super(key: key);
+  const ArtistAlbumTile(this.album, {super.key, this.then, this.size = 130});
 
-  const ArtistAlbumTile.small(this.album, {Key? key, this.then, this.size = 110}) : super(key: key);
+  const ArtistAlbumTile.small(this.album, {super.key, this.then, this.size = 110});
 
   final MusicAlbum album;
   final void Function()? then;

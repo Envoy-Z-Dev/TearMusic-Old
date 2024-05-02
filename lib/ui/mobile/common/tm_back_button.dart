@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:tearmusic/providers/navigator_provider.dart';
 
 class TMBackButton extends StatelessWidget {
-  const TMBackButton({Key? key}) : super(key: key);
+  const TMBackButton({super.key});
 
   @override
   Widget build(BuildContext context) {

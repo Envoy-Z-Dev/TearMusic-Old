@@ -17,7 +17,6 @@ import 'package:tearmusic/providers/navigator_provider.dart';
 import 'package:tearmusic/ui/mobile/common/filter_bar.dart';
 import 'package:tearmusic/ui/mobile/common/tiles/search_album_tile.dart';
 import 'package:tearmusic/ui/mobile/common/tiles/search_artist_tile.dart';
-import 'package:tearmusic/ui/mobile/common/tiles/search_playlist_tile.dart';
 import 'package:tearmusic/ui/mobile/common/tiles/search_track_tile.dart';
 import 'package:tearmusic/ui/mobile/common/wallpaper.dart';
 import 'package:tearmusic/ui/mobile/navigator.dart';
@@ -28,7 +27,7 @@ enum SearchResult { prepare, empty, loading, done }
 // Part of the filter code were stolen from https://github.com/filc/naplo
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({Key? key}) : super(key: key);
+  const SearchPage({super.key});
 
   @override
   State<SearchPage> createState() => _SearchPageState();

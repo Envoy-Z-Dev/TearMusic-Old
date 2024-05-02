@@ -12,7 +12,7 @@ import 'package:tearmusic/utils.dart';
 
 class TrackInfo extends StatelessWidget {
   const TrackInfo({
-    Key? key,
+    super.key,
     required this.title,
     required this.artist,
     required this.cp,
@@ -20,7 +20,7 @@ class TrackInfo extends StatelessWidget {
     required this.screenSize,
     required this.bottomOffset,
     required this.maxOffset,
-  }) : super(key: key);
+  });
 
   final String title;
   final String artist;

@@ -9,7 +9,7 @@ import 'package:tearmusic/utils.dart';
 
 class TrackImage extends StatelessWidget {
   const TrackImage({
-    Key? key,
+    super.key,
     this.images,
     required this.bottomOffset,
     required this.maxOffset,
@@ -19,7 +19,7 @@ class TrackImage extends StatelessWidget {
     this.width = 82.0,
     this.bytes,
     this.large = false,
-  }) : super(key: key);
+  });
 
   final Images? images;
   final bool large;

@@ -47,9 +47,9 @@ class BatchTrackHistory extends Model {
   BatchTrackHistory({
     required this.track,
     this.from,
-    required String type,
+    required super.type,
     required this.date,
-  }) : super(id: track.id, type: type);
+  }) : super(id: track.id);
 
   factory BatchTrackHistory.decode(Map json) {
     return BatchTrackHistory(

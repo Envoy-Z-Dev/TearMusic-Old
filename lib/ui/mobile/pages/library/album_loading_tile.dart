@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class AlbumLoadingTile extends StatelessWidget {
-  const AlbumLoadingTile({Key? key}) : super(key: key);
+  const AlbumLoadingTile({super.key});
 
   @override
   Widget build(BuildContext context) {

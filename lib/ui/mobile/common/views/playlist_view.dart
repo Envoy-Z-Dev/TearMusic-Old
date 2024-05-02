@@ -23,7 +23,7 @@ import 'package:tearmusic/ui/mobile/common/views/playlist_track_tile.dart';
 import 'package:tearmusic/ui/common/format.dart';
 
 class PlaylistView extends StatefulWidget {
-  const PlaylistView(this.playlist, {Key? key}) : super(key: key);
+  const PlaylistView(this.playlist, {super.key});
 
   final MusicPlaylist playlist;
 
@@ -234,9 +234,6 @@ class _PlaylistViewState extends State<PlaylistView> {
                                         child: FloatingActionButton(
                                           child: const Icon(Icons.play_arrow),
                                           onPressed: () {
-                                            // TODO: refactor
-                                            // context.read<UserProvider>().newQueue(PlayerInfoSourceType.playlist,
-                                            //     id: widget.playlist.id, wantSeed: context.read<UserProvider>().playerInfo.queueSource.seed != null);
                                           },
                                         ),
                                       ),

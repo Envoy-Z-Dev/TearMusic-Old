@@ -37,32 +37,20 @@ class UserProvider extends ChangeNotifier {
       log("Library decode error: $e");
     }
 
-    //try {
     final stPlayerInfo = _store.get("player_info");
     if (stPlayerInfo != null) playerInfo = PlayerInfo.decode(jsonDecode(stPlayerInfo));
-    // } catch (e) {
-    //   log("Player Info decode error: $e");
-    // }
 
-    String? accessToken = _store.get("access_token");
-    String? refreshToken = _store.get("refresh_token");
-
-    _api.base.refreshCallback = loginCallback;
-    _api.base.setAuth(accessToken, refreshToken);
     _musicInfoProvider.userId = _id ?? "";
 
-    if (accessToken != null) loggedIn = true;
     notifyListeners();
 
-    if (loggedIn) _getUser();
+    _getUser();
   }
 
   late Box _store;
   final UserApi _api;
   final MusicInfoProvider _musicInfoProvider;
   late final CurrentMusicProvider _currentMusicProvider;
-
-  bool loggedIn = false;
 
   String? _id;
   String? _username;
@@ -74,36 +62,6 @@ class UserProvider extends ChangeNotifier {
 
   String get username => _username ?? "";
   String get avatar => _avatar ?? "";
-
-  Future<void> logoutCallback() async {
-    _api.base.destroyToken();
-
-    _store.delete("username");
-    _store.delete("avatar");
-    _store.delete("access_token");
-    _store.delete("refresh_token");
-    _store.delete("library");
-    _store.delete("player_info");
-
-    final cacheBox = await Hive.openBox("cached_images");
-    cacheBox.clear();
-
-    loggedIn = false;
-
-    notifyListeners();
-  }
-
-  Future<void> loginCallback(String? accessToken, String? refreshToken) async {
-    if (accessToken == null || refreshToken == null) return;
-
-    _store.put("access_token", accessToken);
-    _store.put("refresh_token", refreshToken);
-
-    _api.base.setAuth(accessToken, refreshToken);
-    notifyListeners();
-
-    await _getUser();
-  }
 
   Future<void> _getUser() async {
     try {
@@ -126,11 +84,9 @@ class UserProvider extends ChangeNotifier {
       await matchPlayerInfo();
       _store.put("player_info", jsonEncode(playerInfo.encode()));
     } on AuthException {
-      loggedIn = false;
-      notifyListeners();
+      // Handle authentication exception if needed
     }
   }
-
   Future<UserLibrary> getLibrary() async {
     if (library == null) {
       library = await _api.getLibrary();
@@ -252,11 +208,7 @@ class UserProvider extends ChangeNotifier {
       final currentTrack = await _musicInfoProvider.batchTracks([playerInfo.currentMusic!.id]);
 
       if (currentTrack.isNotEmpty) {
-        // log("[Player] Playing current music: ${currentTrack.first}");
-        // TODO: do not start immediately
-        // _currentMusicProvider.playTrack(currentTrack.first);
       } else {
-        // log("[Player] Failed to play current music because is empty");
       }
     }
 
@@ -486,8 +438,6 @@ class UserProvider extends ChangeNotifier {
 
     if (seed != null) tracks.shuffle(math.Random(seed));
 
-    // TODO: queue source is radio if length < 50
-
     final queueTracks = tracks.sublist(0, tracks.length.clamp(0, 50));
 
     playerInfo.normalQueue = queueTracks.map((e) => e.id).toList();
@@ -563,7 +513,6 @@ class UserProvider extends ChangeNotifier {
   void playTrackById(String id, bool fromPrimary) {
     final playTrack = _musicInfoProvider.batchTracks([id]);
     playTrack.then((value) {
-      // TODO: refactor fromPrimary
       _currentMusicProvider.playTrack(value.first);
     });
   }

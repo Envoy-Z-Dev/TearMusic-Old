@@ -26,7 +26,7 @@ import 'package:tearmusic/utils.dart';
 enum PlayerState { mini, expanded, queue }
 
 class Player extends StatefulWidget {
-  const Player({Key? key, required this.animation}) : super(key: key);
+  const Player({super.key, required this.animation});
 
   final AnimationController animation;
 

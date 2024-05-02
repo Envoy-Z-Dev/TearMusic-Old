@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ImagePlaceholder extends StatelessWidget {
-  const ImagePlaceholder({Key? key, this.large = false}) : super(key: key);
+  const ImagePlaceholder({super.key, this.large = false});
 
   final bool large;
 

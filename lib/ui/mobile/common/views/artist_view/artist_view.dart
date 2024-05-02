@@ -25,7 +25,7 @@ import 'package:tearmusic/ui/mobile/common/views/content_list_view.dart';
 import 'package:tearmusic/ui/mobile/pages/library/track_loading_tile.dart';
 
 class ArtistView extends StatefulWidget {
-  const ArtistView(this.artist, {Key? key}) : super(key: key);
+  const ArtistView(this.artist, {super.key});
 
   final MusicArtist artist;
 

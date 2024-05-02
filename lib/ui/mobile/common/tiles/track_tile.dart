@@ -23,8 +23,7 @@ import 'package:tearmusic/ui/mobile/common/views/artist_view/artist_view.dart';
 import 'package:tearmusic/ui/mobile/common/views/manual_match_view.dart';
 
 class TrackTile extends StatelessWidget {
-  const TrackTile(this.track, {Key? key, this.leadingTrackNumber = false, this.trailingDuration = false, this.onPressed, this.onLongPressed})
-      : super(key: key);
+  const TrackTile(this.track, {super.key, this.leadingTrackNumber = false, this.trailingDuration = false, this.onPressed, this.onLongPressed});
 
   final MusicTrack track;
   final bool leadingTrackNumber;

@@ -18,7 +18,7 @@ import 'package:tearmusic/ui/mobile/common/wallpaper.dart';
 import 'package:wakelock/wakelock.dart';
 
 class LyricsView extends StatefulWidget {
-  const LyricsView(this.track, {Key? key}) : super(key: key);
+  const LyricsView(this.track, {super.key});
 
   final MusicTrack track;
 

@@ -9,7 +9,7 @@ import 'package:tearmusic/providers/music_info_provider.dart';
 import 'package:tearmusic/ui/mobile/common/tiles/manual_match_tile.dart';
 
 class ManualMatchView extends StatefulWidget {
-  const ManualMatchView(this.track, {Key? key}) : super(key: key);
+  const ManualMatchView(this.track, {super.key});
 
   final MusicTrack track;
 

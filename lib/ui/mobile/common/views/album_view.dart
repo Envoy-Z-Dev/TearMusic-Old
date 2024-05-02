@@ -21,7 +21,7 @@ import 'package:tearmusic/ui/mobile/common/cached_image.dart';
 import 'package:tearmusic/ui/mobile/common/view_menu_button.dart';
 
 class AlbumView extends StatefulWidget {
-  const AlbumView(this.album, {Key? key}) : super(key: key);
+  const AlbumView(this.album, {super.key});
 
   final MusicAlbum album;
 
@@ -203,8 +203,6 @@ class _AlbumViewState extends State<AlbumView> {
                                         child: FloatingActionButton(
                                           child: const Icon(Icons.play_arrow),
                                           onPressed: () {
-                                            // TODO: refactor
-                                            // context.read<UserProvider>().newQueue(PlayerInfoSourceType.album, id: widget.album.id);
                                           },
                                         ),
                                       ),

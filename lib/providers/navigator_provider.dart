@@ -88,7 +88,7 @@ class NavigatorProvider extends ChangeNotifier {
         style: theme.textTheme.bodyMedium!,
         child: snackBar.content,
       ),
-      backgroundColor: theme.colorScheme.background,
+      backgroundColor: theme.colorScheme.surface,
     ));
   }
 }

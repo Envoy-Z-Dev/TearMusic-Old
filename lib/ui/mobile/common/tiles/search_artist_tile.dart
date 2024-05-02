@@ -6,7 +6,7 @@ import 'package:tearmusic/ui/mobile/common/cached_image.dart';
 import 'package:tearmusic/ui/mobile/common/views/artist_view/artist_view.dart';
 
 class SearchArtistTile extends StatelessWidget {
-  const SearchArtistTile(this.artist, {Key? key}) : super(key: key);
+  const SearchArtistTile(this.artist, {super.key});
 
   final MusicArtist artist;
 
@@ -25,7 +25,7 @@ class SearchArtistTile extends StatelessWidget {
               height: 42,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Theme.of(context).colorScheme.surfaceVariant,
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
               ),
               child: Center(
                 child: Icon(

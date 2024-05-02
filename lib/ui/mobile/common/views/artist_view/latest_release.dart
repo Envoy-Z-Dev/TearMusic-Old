@@ -4,7 +4,7 @@ import 'package:tearmusic/ui/mobile/common/views/album_view.dart';
 import 'package:tearmusic/ui/mobile/common/cached_image.dart';
 
 class LatestRelease extends StatelessWidget {
-  const LatestRelease(this.album, {Key? key, this.then}) : super(key: key);
+  const LatestRelease(this.album, {super.key, this.then});
 
   final MusicAlbum album;
   final void Function()? then;

@@ -10,14 +10,14 @@ typedef ContentListViewRetriever<T> = Future<List<T>>? Function();
 
 class ContentListView<T extends Model> extends StatefulWidget {
   const ContentListView({
-    Key? key,
+    super.key,
     this.title,
     this.emptyTitle,
     required this.loadingWidget,
     required this.itemBuilder,
     required this.retriever,
     this.builder,
-  }) : super(key: key);
+  });
 
   final Widget? title;
   final Widget? emptyTitle;

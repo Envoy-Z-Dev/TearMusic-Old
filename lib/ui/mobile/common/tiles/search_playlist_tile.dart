@@ -6,7 +6,7 @@ import 'package:tearmusic/ui/mobile/common/cached_image.dart';
 import 'package:tearmusic/ui/mobile/common/views/playlist_view.dart';
 
 class SearchPlaylistTile extends StatelessWidget {
-  const SearchPlaylistTile(this.playlist, {Key? key}) : super(key: key);
+  const SearchPlaylistTile(this.playlist, {super.key});
 
   final MusicPlaylist playlist;
 

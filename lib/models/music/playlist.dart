@@ -10,14 +10,14 @@ class MusicPlaylist extends Model {
   final String owner;
 
   MusicPlaylist({
-    required Map json,
-    required String id,
+    required Map super.json,
+    required super.id,
     required this.name,
     required this.description,
     required this.images,
     required this.trackCount,
     required this.owner,
-  }) : super(id: id, json: json, key: name, type: "playlist");
+  }) : super(key: name, type: "playlist");
 
   factory MusicPlaylist.decode(Map json) {
     final images = json["images"] as List?;
@@ -44,11 +44,11 @@ class PlaylistDetails extends Model {
   final int followers;
 
   PlaylistDetails({
-    required Map json,
-    required String id,
+    required Map super.json,
+    required super.id,
     required this.tracks,
     required this.followers,
-  }) : super(id: id, json: json, type: "playlistextras");
+  }) : super(type: "playlistextras");
 
   factory PlaylistDetails.decode(Map json) {
     final tracks = MusicTrack.decodeList((json['tracks'] as List).cast<Map>());

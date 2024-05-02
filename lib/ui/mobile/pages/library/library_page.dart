@@ -28,7 +28,7 @@ import 'package:tearmusic/ui/mobile/pages/library/playlist_loading_tile.dart';
 import 'package:tearmusic/ui/mobile/pages/library/track_loading_tile.dart';
 
 class LibraryPage extends StatefulWidget {
-  const LibraryPage({Key? key}) : super(key: key);
+  const LibraryPage({super.key});
 
   @override
   State<LibraryPage> createState() => _LibraryPageState();

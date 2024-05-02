@@ -8,7 +8,7 @@ import 'package:tearmusic/providers/current_music_provider.dart';
 import 'dart:math' as math;
 
 class WaveformSlider extends StatefulWidget {
-  const WaveformSlider({Key? key}) : super(key: key);
+  const WaveformSlider({super.key});
 
   @override
   State<WaveformSlider> createState() => _WaveformSliderState();

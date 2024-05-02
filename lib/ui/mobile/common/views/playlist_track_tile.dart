@@ -3,7 +3,7 @@ import 'package:tearmusic/models/music/track.dart';
 import 'package:tearmusic/ui/mobile/common/tiles/track_tile.dart';
 
 class PlaylistTrackTile extends StatelessWidget {
-  const PlaylistTrackTile(this.track, {Key? key}) : super(key: key);
+  const PlaylistTrackTile(this.track, {super.key});
 
   final MusicTrack track;
 

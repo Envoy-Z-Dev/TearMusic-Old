@@ -45,13 +45,13 @@ class CancellationToken {
 
 class ReorderableList extends StatefulWidget {
   const ReorderableList({
-    Key? key,
+    super.key,
     required this.child,
     required this.onReorder,
     this.onReorderDone,
     this.cancellationToken,
     this.decoratePlaceholder = _defaultDecoratePlaceholder,
-  }) : super(key: key);
+  });
 
   final Widget child;
 
@@ -103,10 +103,10 @@ typedef ReorderableListenerCallback = bool Function();
 
 class ReorderableListener extends StatelessWidget {
   const ReorderableListener({
-    Key? key,
+    super.key,
     this.child,
     this.canStart,
-  }) : super(key: key);
+  });
   final Widget? child;
 
   final ReorderableListenerCallback? canStart;
@@ -162,11 +162,11 @@ class ReorderableListener extends StatelessWidget {
 
 class DelayedReorderableListener extends ReorderableListener {
   const DelayedReorderableListener({
-    Key? key,
-    Widget? child,
-    ReorderableListenerCallback? canStart,
+    super.key,
+    super.child,
+    super.canStart,
     this.delay = kLongPressTimeout,
-  }) : super(key: key, child: child, canStart: canStart);
+  });
 
   final Duration delay;
 
@@ -709,8 +709,7 @@ class _DragProxyState extends State<_DragProxy> {
 }
 
 class _VerticalPointerState extends MultiDragPointerState {
-  _VerticalPointerState(Offset initialPosition, PointerDeviceKind kind, DeviceGestureSettings? gestureSettings)
-      : super(initialPosition, kind, gestureSettings) {
+  _VerticalPointerState(super.initialPosition, super.kind, super.gestureSettings) {
     _resolveTimer = Timer(const Duration(milliseconds: 150), () {
       resolve(GestureDisposition.accepted);
       _resolveTimer = null;
@@ -748,12 +747,9 @@ class _VerticalPointerState extends MultiDragPointerState {
 //
 class _Recognizer extends MultiDragGestureRecognizer {
   _Recognizer({
-    required Object? debugOwner,
-    Set<PointerDeviceKind>? supportedDevices,
-  }) : super(
-          debugOwner: debugOwner,
-          supportedDevices: supportedDevices,
-        );
+    required super.debugOwner,
+    super.supportedDevices,
+  });
 
   @override
   _VerticalPointerState createNewPointerState(PointerDownEvent event) {

@@ -4,7 +4,7 @@ import 'package:tearmusic/ui/mobile/common/cached_image.dart';
 import 'package:tearmusic/ui/mobile/common/views/artist_view/artist_view.dart';
 
 class ArtistArtistTile extends StatelessWidget {
-  const ArtistArtistTile(this.artist, {Key? key, this.then}) : super(key: key);
+  const ArtistArtistTile(this.artist, {super.key, this.then});
 
   final MusicArtist artist;
   final void Function()? then;

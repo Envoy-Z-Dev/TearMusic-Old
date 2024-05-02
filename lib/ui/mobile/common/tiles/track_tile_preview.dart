@@ -3,7 +3,7 @@ import 'package:tearmusic/models/music/track.dart';
 import 'package:tearmusic/ui/mobile/common/tiles/track_tile.dart';
 
 class TrackTilePreview extends StatelessWidget {
-  const TrackTilePreview(this.track, {Key? key}) : super(key: key);
+  const TrackTilePreview(this.track, {super.key});
 
   final MusicTrack track;
 
@@ -12,7 +12,7 @@ class TrackTilePreview extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12.0),
       child: Container(
-        color: Theme.of(context).colorScheme.surfaceVariant.withOpacity(.5),
+        color: Theme.of(context).colorScheme.surfaceContainerHighest.withOpacity(.5),
         child: TrackTile(
           track,
           onLongPressed: () {},

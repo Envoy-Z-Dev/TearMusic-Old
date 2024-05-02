@@ -5,11 +5,11 @@ class UserInfo extends Model {
   String avatar;
 
   UserInfo({
-    required String id,
-    required Map json,
+    required super.id,
+    required Map super.json,
     required this.username,
     required this.avatar,
-  }) : super(id: id, json: json, key: username, type: "user");
+  }) : super(key: username, type: "user");
 
   factory UserInfo.decode(Map json) {
     return UserInfo(

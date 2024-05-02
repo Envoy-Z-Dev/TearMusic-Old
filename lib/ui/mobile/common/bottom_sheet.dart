@@ -11,12 +11,12 @@ class BottomSheetContainer extends StatelessWidget {
   final BoxShadow? shadow;
 
   const BottomSheetContainer({
-    Key? key,
+    super.key,
     required this.child,
     this.backgroundColor,
     required this.topRadius,
     this.shadow,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

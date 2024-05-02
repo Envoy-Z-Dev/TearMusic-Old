@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 
 class FilterBar extends StatefulWidget implements PreferredSizeWidget {
   const FilterBar(
-      {Key? key,
+      {super.key,
       required this.items,
       required this.controller,
       this.onTap,
       this.padding = const EdgeInsets.symmetric(horizontal: 24.0),
       this.disableFading = false,
       this.scrollable = true})
-      : assert(items.length == controller.length),
-        super(key: key);
+      : assert(items.length == controller.length);
 
   final List<Widget> items;
   final TabController controller;
@@ -55,7 +54,7 @@ class _FilterBarState extends State<FilterBar> {
         color: Theme.of(context).colorScheme.secondary.withOpacity(0.25),
         borderRadius: BorderRadius.circular(45.0),
       ),
-      overlayColor: MaterialStateProperty.all(const Color(0x00000000)),
+      overlayColor: WidgetStateProperty.all(const Color(0x00000000)),
       // Tabs
       padding: EdgeInsets.zero,
       tabs: widget.items,

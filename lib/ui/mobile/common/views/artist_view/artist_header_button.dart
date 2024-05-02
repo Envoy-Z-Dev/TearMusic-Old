@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ArtistHeaderButton extends StatelessWidget {
-  const ArtistHeaderButton({Key? key, this.icon, this.onPressed, required this.child}) : super(key: key);
+  const ArtistHeaderButton({super.key, this.icon, this.onPressed, required this.child});
 
   final Function()? onPressed;
   final Widget? icon;

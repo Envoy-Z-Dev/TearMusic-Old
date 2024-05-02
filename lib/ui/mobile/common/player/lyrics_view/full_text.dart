@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LyricsFullText extends StatelessWidget {
-  const LyricsFullText(this.fullText, {Key? key}) : super(key: key);
+  const LyricsFullText(this.fullText, {super.key});
 
   final String fullText;
 

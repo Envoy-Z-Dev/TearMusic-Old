@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class SettingsStatsItem extends StatelessWidget {
   const SettingsStatsItem({
-    Key? key,
+    super.key,
     required this.name,
     required this.value,
-  }) : super(key: key);
+  });
 
   final String value;
   final String name;

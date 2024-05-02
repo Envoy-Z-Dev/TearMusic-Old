@@ -12,13 +12,13 @@ class MusicLyrics extends Model {
   final RichSync? richSync;
 
   MusicLyrics({
-    required String id,
-    required Map json,
+    required super.id,
+    required Map super.json,
     required this.lyricsType,
     required this.fullText,
     required this.richSync,
     required this.subtitle,
-  }) : super(id: id, json: json, type: "lyrics");
+  }) : super(type: "lyrics");
 
   factory MusicLyrics.decode(Map json) {
     Subtitle? subtitle;

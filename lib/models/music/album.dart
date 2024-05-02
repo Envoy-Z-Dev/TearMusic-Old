@@ -10,14 +10,14 @@ class MusicAlbum extends Model {
   final Images? images;
 
   MusicAlbum({
-    required Map json,
-    required String id,
+    required Map super.json,
+    required super.id,
     required this.name,
     required this.trackCount,
     required this.releaseDate,
     required this.artists,
     required this.images,
-  }) : super(id: id, json: json, key: "$name ${artists.firstOrNull?.name}", type: "album");
+  }) : super(key: "$name ${artists.firstOrNull?.name}", type: "album");
 
   factory MusicAlbum.decode(Map json) {
     final images = json["images"] as List?;

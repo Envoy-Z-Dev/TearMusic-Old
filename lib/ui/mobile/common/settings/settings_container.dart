@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class SettingsContainer extends StatelessWidget {
   const SettingsContainer({
-    Key? key,
+    super.key,
     required this.name,
     required this.items,
-  }) : super(key: key);
+  });
 
   final String name;
   final List<Widget> items;

@@ -10,13 +10,13 @@ class MusicArtist extends Model {
   final int followers;
 
   MusicArtist({
-    required Map json,
-    required String id,
+    required Map super.json,
+    required super.id,
     required this.name,
     required this.genres,
     required this.images,
     required this.followers,
-  }) : super(id: id, json: json, key: name, type: "artist");
+  }) : super(key: name, type: "artist");
 
   factory MusicArtist.decode(Map json) {
     final images = json["images"] as List?;

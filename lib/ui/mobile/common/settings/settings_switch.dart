@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 
 class SettingsSwitchTile extends StatelessWidget {
   const SettingsSwitchTile({
-    Key? key,
+    super.key,
     required this.name,
     required this.desc,
     required this.value,
     required this.onChanged,
-  }) : super(key: key);
+  });
 
   final String name;
   final String desc;
   final bool value;
   final Function(bool) onChanged;
 
-  Color? Function(Set<MaterialState>) switchColor(BuildContext context, double opacity) {
+  Color? Function(Set<WidgetState>) switchColor(BuildContext context, double opacity) {
     return (states) {
-      if (states.contains(MaterialState.selected)) {
+      if (states.contains(WidgetState.selected)) {
         return Theme.of(context).colorScheme.primary.withOpacity(opacity);
       } else {
         return Theme.of(context).colorScheme.secondary.withOpacity(opacity);
@@ -28,8 +28,8 @@ class SettingsSwitchTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return SwitchTheme(
       data: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith(switchColor(context, 1.0)),
-        trackColor: MaterialStateProperty.resolveWith(switchColor(context, 0.5)),
+        thumbColor: WidgetStateProperty.resolveWith(switchColor(context, 1.0)),
+        trackColor: WidgetStateProperty.resolveWith(switchColor(context, 0.5)),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0),

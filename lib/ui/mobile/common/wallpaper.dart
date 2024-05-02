@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 // Disabled due to performance issues
 class Wallpaper extends StatefulWidget {
-  const Wallpaper({Key? key, this.child, this.particleOpacity = .1, this.gradient = true}) : super(key: key);
+  const Wallpaper({super.key, this.child, this.particleOpacity = .1, this.gradient = true});
 
   final Widget? child;
   final double particleOpacity;

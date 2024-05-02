@@ -19,7 +19,7 @@ import 'package:tearmusic/ui/mobile/common/views/artist_view/artist_view.dart';
 import 'package:tearmusic/ui/mobile/common/views/manual_match_view.dart';
 
 class QueueTile extends StatelessWidget {
-  const QueueTile(this.track, this.itemIndex, this.isPrimary, {Key? key}) : super(key: key);
+  const QueueTile(this.track, this.itemIndex, this.isPrimary, {super.key});
 
   final MusicTrack track;
   final int itemIndex;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ArtistLoadingTile extends StatelessWidget {
-  const ArtistLoadingTile({Key? key}) : super(key: key);
+  const ArtistLoadingTile({super.key});
 
   @override
   Widget build(BuildContext context) {

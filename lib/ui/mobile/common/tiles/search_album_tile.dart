@@ -6,7 +6,7 @@ import 'package:tearmusic/ui/mobile/common/views/album_view.dart';
 import 'package:tearmusic/ui/mobile/common/cached_image.dart';
 
 class SearchAlbumTile extends StatelessWidget {
-  const SearchAlbumTile(this.album, {Key? key}) : super(key: key);
+  const SearchAlbumTile(this.album, {super.key});
 
   final MusicAlbum album;
 

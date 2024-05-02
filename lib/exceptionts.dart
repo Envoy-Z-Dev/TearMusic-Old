@@ -5,13 +5,13 @@ class BaseRequestException {
 }
 
 class AuthException extends BaseRequestException {
-  AuthException(String cause) : super(cause);
+  AuthException(super.cause);
 }
 
 class NotFoundException extends BaseRequestException {
-  NotFoundException(String cause) : super(cause);
+  NotFoundException(super.cause);
 }
 
 class UnknownRequestException extends BaseRequestException {
-  UnknownRequestException(String cause) : super(cause);
+  UnknownRequestException(super.cause);
 }
