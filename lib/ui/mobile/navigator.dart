@@ -124,25 +124,26 @@ class _NavigationScreenState extends State<NavigationScreen>
     bottom ??= MediaQuery.of(context).viewPadding.bottom;
     if (bottom == 0) bottom = null;
 
-  return Consumer<WillPopProvider>(
-    builder: (context, value, child) {
-      return PopScope(
-        canPop: true,
-        onPopInvokedWithResult: (didPop, result) async {
-          final popperResult = (value.popper != null ? value.popper!() : true);
-          final state = [
-            _homeNavigatorState,
-            _searchNavigatorState,
-            _libraryNavigatorState,
-          ][_selected.index];
-          final navResult = (state.currentState?.canPop() ?? false);
-          if (popperResult && navResult) {
-            context.read<NavigatorProvider>().pop();
-          }
-        }, 
-        child: child!,
-      );
-    },
+    return Consumer<WillPopProvider>(
+      builder: (context, value, child) {
+        return PopScope(
+          canPop: true,
+          onPopInvoked: (didPop) {
+            final popperResult =
+                (value.popper != null ? value.popper!() : true);
+            final state = [
+              _homeNavigatorState,
+              _searchNavigatorState,
+              _libraryNavigatorState,
+            ][_selected.index];
+            final navResult = (state.currentState?.canPop() ?? false);
+            if (popperResult && navResult) {
+              context.read<NavigatorProvider>().pop();
+            }
+          },
+          child: child!,
+        );
+      },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Material(
